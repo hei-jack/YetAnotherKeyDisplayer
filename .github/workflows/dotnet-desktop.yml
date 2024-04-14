@@ -25,7 +25,7 @@ jobs:
       run: |
         cd RTSSCustomOSD
         msbuild /t:Build /p:Configuration=Release
-      working-directory: RTSSCustomOSD
+      working-directory: YAKD
 
     - name: Build Solution
       run: msbuild /p:Configuration=Release YAKD/YAKD.sln

@@ -3,11 +3,11 @@ name: Build Solution
 on:
   push:
     branches:
-      - master  # 更改为您的默认分支名称
+      - master
 
 jobs:
   build:
-    runs-on: windows-latest  # 选择适当的操作系统环境
+    runs-on: windows-latest
 
     steps:
     - name: Checkout Repository
@@ -16,17 +16,22 @@ jobs:
     - name: Setup MSBuild
       uses: microsoft/setup-msbuild@v1.0.3
       with:
-        msbuild-version: '16.0'  # 根据您的 Visual Studio 版本选择适当的版本
+        msbuild-version: '16.0'
 
     - name: Restore NuGet Packages
-      run: nuget restore YAKD.sln
+      run: nuget restore YAKD/YAKD.sln
+
+    - name: Build RTSSSharedMemoryNET
+      run: |
+        cd YAKD/RTSSCustomOSD
+        msbuild /t:Build /p:Configuration=Release
+      working-directory: YAKD/RTSSCustomOSD
 
     - name: Build Solution
-      run: msbuild /p:Configuration=Release YAKD.sln # 根据需要调整配置
+      run: msbuild /p:Configuration=Release YAKD/YAKD.sln
 
     - name: Archive Artifacts
       uses: actions/upload-artifact@v2
       with:
         name: built-artifacts
-        path: |
-          YetAnotherKeyDisplayer/bin/Release # 替换为实际构建产物的路径
+        path: YAKD/YetAnotherKeyDisplayer/bin/Release

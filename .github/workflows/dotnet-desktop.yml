@@ -19,13 +19,13 @@ jobs:
         msbuild-version: '16.0'
 
     - name: Restore NuGet Packages
-      run: nuget restore YAKD/YAKD.sln
+      run: nuget restore YAKD.sln
 
     - name: Build RTSSSharedMemoryNET
       run: |
-        cd YAKD/RTSSCustomOSD
+        cd RTSSCustomOSD
         msbuild /t:Build /p:Configuration=Release
-      working-directory: YAKD/RTSSCustomOSD
+      working-directory: RTSSCustomOSD
 
     - name: Build Solution
       run: msbuild /p:Configuration=Release YAKD/YAKD.sln

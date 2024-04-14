@@ -27,7 +27,7 @@ jobs:
         msbuild /t:Build /p:Configuration=Release
 
     - name: Build Solution
-      run: msbuild /p:Configuration=Release YAKD/YAKD.sln
+      run: msbuild /p:Configuration=Release YAKD.sln
 
     - name: Archive Artifacts
       uses: actions/upload-artifact@v2

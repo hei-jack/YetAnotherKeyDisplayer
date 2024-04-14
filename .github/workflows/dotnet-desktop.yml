@@ -1,0 +1,32 @@
+name: Build Solution
+
+on:
+  push:
+    branches:
+      - master  # 更改为您的默认分支名称
+
+jobs:
+  build:
+    runs-on: windows-latest  # 选择适当的操作系统环境
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v1.0.3
+      with:
+        msbuild-version: '16.0'  # 根据您的 Visual Studio 版本选择适当的版本
+
+    - name: Restore NuGet Packages
+      run: nuget restore YourSolution.sln
+
+    - name: Build Solution
+      run: msbuild /p:Configuration=Release YourSolution.sln  # 根据需要调整配置
+
+    - name: Archive Artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: built-artifacts
+        path: |
+          YetAnotherKeyDisplayer/bin/Release # 替换为实际构建产物的路径

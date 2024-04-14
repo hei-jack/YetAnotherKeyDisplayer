@@ -25,7 +25,6 @@ jobs:
       run: |
         cd RTSSCustomOSD
         msbuild /t:Build /p:Configuration=Release
-      working-directory: YAKD
 
     - name: Build Solution
       run: msbuild /p:Configuration=Release YAKD/YAKD.sln
@@ -34,4 +33,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: built-artifacts
-        path: YAKD/YetAnotherKeyDisplayer/bin/Release
+        path: YAKD/bin/Release

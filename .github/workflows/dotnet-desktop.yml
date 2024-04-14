@@ -19,10 +19,10 @@ jobs:
         msbuild-version: '16.0'  # 根据您的 Visual Studio 版本选择适当的版本
 
     - name: Restore NuGet Packages
-      run: nuget restore YourSolution.sln
+      run: nuget restore YAKD.sln
 
     - name: Build Solution
-      run: msbuild /p:Configuration=Release YourSolution.sln  # 根据需要调整配置
+      run: msbuild /p:Configuration=Release YAKD.sln # 根据需要调整配置
 
     - name: Archive Artifacts
       uses: actions/upload-artifact@v2

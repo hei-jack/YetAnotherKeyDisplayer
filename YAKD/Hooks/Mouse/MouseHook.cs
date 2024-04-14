@@ -90,14 +90,14 @@ namespace YAKD.Hooks.Mouse
                     KeyUp?.Invoke(this, new MouseHookEventArgs($"{MouseButtonsConverter.GetButtonName(mouseParam)} 2"));
                     break;
                 case MouseMessage.WM_MOUSEWHEEL when lParam.hwnd.Equals((IntPtr)(-0x00780000)):
-                    KeyUp?.Invoke(this, new MouseHookEventArgs($"{MouseButtonsConverter.GetButtonName(mouseParam)} Up"));
-                    KeyDown?.Invoke(this, new MouseHookEventArgs($"{MouseButtonsConverter.GetButtonName(mouseParam)} Down"));
-                    StopMouseWheelAsync("Down");
+                    KeyUp?.Invoke(this, new MouseHookEventArgs($"{MouseButtonsConverter.GetButtonName(mouseParam)} 上"));
+                    KeyDown?.Invoke(this, new MouseHookEventArgs($"{MouseButtonsConverter.GetButtonName(mouseParam)} 下"));
+                    StopMouseWheelAsync("下");
                     break;
                 case MouseMessage.WM_MOUSEWHEEL when lParam.hwnd.Equals((IntPtr)0x00780000):
-                    KeyUp?.Invoke(this, new MouseHookEventArgs($"{MouseButtonsConverter.GetButtonName(mouseParam)} Down"));
-                    KeyDown?.Invoke(this, new MouseHookEventArgs($"{MouseButtonsConverter.GetButtonName(mouseParam)} Up"));
-                    StopMouseWheelAsync("Up");
+                    KeyUp?.Invoke(this, new MouseHookEventArgs($"{MouseButtonsConverter.GetButtonName(mouseParam)} 上"));
+                    KeyDown?.Invoke(this, new MouseHookEventArgs($"{MouseButtonsConverter.GetButtonName(mouseParam)} 下"));
+                    StopMouseWheelAsync("上");
                     break;
             }
 

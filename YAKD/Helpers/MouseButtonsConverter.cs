@@ -26,19 +26,19 @@ namespace YAKD.Helpers
         {
             Buttons = new Dictionary<MouseMessage, string>
             {
-                { MouseMessage.WM_LBUTTONUP, "LMB" },
-                { MouseMessage.WM_LBUTTONDOWN, "LMB" },
-                { MouseMessage.WM_LBUTTONDBLCLK, "LMB" },
-                { MouseMessage.WM_RBUTTONUP, "RMB" },
-                { MouseMessage.WM_RBUTTONDOWN, "RMB" },
-                { MouseMessage.WM_RBUTTONDBLCLK, "RMB" },
-                { MouseMessage.WM_MBUTTONUP, "MMB" },
-                { MouseMessage.WM_MBUTTONDOWN, "MMB" },
-                { MouseMessage.WM_MBUTTONDBLCLK, "MMB" },
+                { MouseMessage.WM_LBUTTONUP, "鼠标左键" },
+                { MouseMessage.WM_LBUTTONDOWN, "鼠标左键" },
+                { MouseMessage.WM_LBUTTONDBLCLK, "鼠标左键" },
+                { MouseMessage.WM_RBUTTONUP, "鼠标右键" },
+                { MouseMessage.WM_RBUTTONDOWN, "鼠标右键" },
+                { MouseMessage.WM_RBUTTONDBLCLK, "鼠标右键" },
+                { MouseMessage.WM_MBUTTONUP, "鼠标中键" },
+                { MouseMessage.WM_MBUTTONDOWN, "鼠标中键" },
+                { MouseMessage.WM_MBUTTONDBLCLK, "鼠标中键" },
                 { MouseMessage.WM_XBUTTONUP, "XMB" },
                 { MouseMessage.WM_XBUTTONDOWN, "XMB" },
                 { MouseMessage.WM_XBUTTONDBLCLK, "XMB" },
-                { MouseMessage.WM_MOUSEWHEEL, "Mouse Wheel" }
+                { MouseMessage.WM_MOUSEWHEEL, "鼠标滚动" }
             };
         }
 
